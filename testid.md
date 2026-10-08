@@ -2,11 +2,11 @@
 
 _Uuendatatud 04.06.2026_
 
-**Eeldus:** teenused ja andmetoru töövoog käivitatud — vt [seadistamine.md](seadistamine.md), testid käivituvad automaatselt. 
+**Eeldus:** teenused ja andmetoru töövoog käivitatud — vt seadistamine.md, testid käivituvad automaatselt. 
 
 Projektis jookseb kokku **75** `dbt test`; selles juhendis on **33 andmekvaliteeditesti**.
 
-Testide valik põhineb paljuski pre-dbt ajal legacy QA-s kirjeldatud kontrollidel — vt [scripts/legacy/qa/](../scripts/legacy/qa/) ([scripts/legacy/README.md](../scripts/legacy/README.md)).
+Testide valik põhineb paljuski pre-dbt ajal legacy QA-s kirjeldatud kontrollidel — vt scripts/legacy/qa/.
 
 ## Sisukord
 
