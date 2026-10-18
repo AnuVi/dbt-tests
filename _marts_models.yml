@@ -1,1 +1,69 @@
+//katkend
+//excerpt
 
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+
+    tests:
+      # lead_created_at <= opportunity_at <= offer_at <= quote_at
+      # dbt_expectations: ainult paaride võrdlus; vahelejäetud etapid: dbt_utils
+      - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+          name: lead_opportunity_gte_created_dim_lead
+          column_A: opportunity_at
+          column_B: lead_created_at
+          or_equal: true
+          row_condition: "opportunity_at is not null and lead_created_at is not null"
+          config:
+            severity: warn
+            
+      - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+          name: lead_offer_gte_opportunity_dim_lead
+          column_A: offer_at
+          column_B: opportunity_at
+          or_equal: true
+          row_condition: "offer_at is not null and opportunity_at is not null"
+          config:
+            severity: warn
+            
+            
+      # Ei tohi jätta vahele etappi (offer ilma opportunity't, quote ilma offer'ita)
+      - dbt_utils.expression_is_true:
+          name: lead_no_offer_without_opportunity_dim_lead
+          expression: "not (offer_at is not null and opportunity_at is null)"
+          config:
+            severity: warn
+  
+
+  - name: fact_marketing_investments
+    columns:
+      - name: marketing_investment_key
+        tests: [unique, not_null]
+      - name: date_key
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_date'), field: date_key}
+      - name: marketing_channel_key
+        tests:
+          - relationships: {to: ref('dim_marketing_channel'), field: marketing_channel_key}
+
+  - name: fact_orders
+    columns:
+      - name: order_key
+        tests: [unique, not_null]
+      - name: system_transaction_id
+        tests:
+          - unique:
+              name: unique_fact_orders_system_transaction_id
+              config:
+                severity: warn
+          - not_null:
+              name: not_null_fact_orders_system_transaction_id
+              config:
+                severity: warn
+      
+  
