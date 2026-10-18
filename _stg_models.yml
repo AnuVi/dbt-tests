@@ -1,0 +1,32 @@
+//katkend
+//excerpt
+
+name: stg_leads
+    description: "CRM müügivihjed, üks rida lead'i kohta (DISTINCT ON system_lead_id)."
+    columns:
+      - name: date_key
+        tests:
+          - no_future_date:
+              config:
+                severity: error
+      - name: system_lead_id
+        tests: [unique, not_null]
+
+  - name: stg_analytics
+    description: "Google Analyticsist tulevad andmed"
+    tests:
+    #kui pole 25 päeva uuendatud andmeid, siis warn -> andmed uuendatakse vähemalt korra kuus
+      - dbt_utils.recency:
+          name: recency_stg_analytics_25_days
+          datepart: day
+          field: date_key
+          interval: 25  
+          ignore_time_component: true  #ei arvesta kellaaega
+          config:
+            severity: warn
+    columns:
+      - name: date_key
+        tests:
+          - no_future_date:
+              config:
+                severity: error
