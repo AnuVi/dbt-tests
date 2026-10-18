@@ -1,3 +1,5 @@
+[In English below](#in-english-below)
+
 [Andmeinseneeria kursuse](https://github.com/KristoR/ut-andmeinseneeria-2026) grupitöö eesmärgiks oli luua terviklik andmelahendus, mis integreerib turundusinvesteeringud, veebianalüütika, CRM-i müügivihjed ja tellimused ning iseteeninduse lepingute andmed. Nii saab täpsemalt hinnata turundusinvesteeringute tasuvust.
 
 Minu ülesandeks oli dbt-s testide kirjutamine. 
@@ -24,8 +26,7 @@ Minu ülesandeks oli dbt-s testide kirjutamine.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
+## In English below
 
 The goal of the [data engineering course](https://github.com/KristoR/ut-andmeinseneeria-2026) group project was to build a complete data solution that integrates marketing investments, web analytics, CRM leads and orders, and self-service contract data. This makes it possible to assess the return on marketing investment more precisely.
 
