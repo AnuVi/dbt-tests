@@ -1,8 +1,8 @@
 [Andmeinseneeria kursuse](https://github.com/KristoR/ut-andmeinseneeria-2026) grupitöö eesmärgiks oli luua terviklik andmelahendus, mis integreerib turundusinvesteeringud, veebianalüütika, CRM-i müügivihjed ja tellimused ning iseteeninduse lepingute andmed. Nii saab täpsemalt hinnata turundusinvesteeringute tasuvust.
 
 Minu ülesandeks oli dbt-s testide kirjutamine. 
--[_marts_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_marts_models.yml) ja [_stg_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_stg_models.yml) sisaldavad katkendeid üld(generic)testidest, mis kontrollivad ühe tabeli/mudeli veerge.
-- Kirjutatud singular-testid leiab [kaustast](https://github.com/AnuVi/dbt-tests/tree/main/dbt/tests). Need testid sisaldavad ühte päringut, mis kontrollib üle mitme tabeli.
+-[_marts_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_marts_models.yml) ja [_stg_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_stg_models.yml) sisaldavad katkendeid üld(generic)testidest ehk päringutest, mis kontrollivad ühe tabeli/mudeli veerge.
+- Kirjutatud singular-testid leiab [kaustast](https://github.com/AnuVi/dbt-tests/tree/main/dbt/tests). Need testid sisaldavad ühte päringut, mis kontrollib andmeid üle mitme tabeli.
 - [Dokumentatsioon testide kohta](https://github.com/AnuVi/dbt-tests/blob/main/testid.md). 
 - [Jupp lõputöö videost](https://www.anuvi.me/demos/videos/dbt-test.mp4), kus tutvustan nõutud kolme andmekvaliteedi testi.
 
@@ -30,9 +30,10 @@ Minu ülesandeks oli dbt-s testide kirjutamine.
 The goal of the [data engineering course](https://github.com/KristoR/ut-andmeinseneeria-2026) group project was to build a complete data solution that integrates marketing investments, web analytics, CRM leads and orders, and self-service contract data. This makes it possible to assess the return on marketing investment more precisely.
 
 My task was to write tests in dbt.
-- [Documentation of the tests](https://github.com/AnuVi/dbt-tests/blob/main/testid.md).
-- The singular tests are in [this folder](https://github.com/AnuVi/dbt-tests/tree/main/dbt/tests).
-- [A clip from the final project video in Estonian](https://www.anuvi.me/demos/videos/dbt-test.mp4), where I introduce the three required data quality tests.
+- [_marts_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_marts_models.yml) and [_stg_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_stg_models.yml) contain excerpts of generic tests that check the columns of a single table or model.
+- The singular tests are in [this folder](https://github.com/AnuVi/dbt-tests/tree/main/dbt/tests). Each test is one query that checks data across several tables.
+- [Test documentation](https://github.com/AnuVi/dbt-tests/blob/main/testid.md)
+- [A clip from the thesis video](https://www.anuvi.me/demos/videos/dbt-test.mp4), in which I present the three required data quality tests.
 
 | Type | Idea |
 | --- | --- |
