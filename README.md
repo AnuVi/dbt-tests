@@ -6,6 +6,20 @@ Minu ülesandeks oli dbt-s testide kirjutamine.
 - [Jupp lõputöö videost](https://www.anuvi.me/demos/videos/dbt-test.mp4), kus tutvustan nõutud kolme andmekvaliteedi testi.
 
 
+| Tüüp                                      | Idee                                                                                                                   |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `unique` / `not_null`                     | Võtmed ja kohustuslikud väljad peavad olema unikaalsed ja ei tohi olla tühjad                                          |
+| `not_null` + `where`                      | Kohustuslik ainult tingimuse korral                                                                  |
+| `unique` + `where`                        | Unikaalsus ainult tingimuse korral                                                                                  |
+| `accepted_values`                         | Veerg võib olla ainult kindlate väärtuste hulgast                                                                      |
+| `relationships`                           | Fakt/dim viitab teisele tabelile (FK)                                                                                  |
+| `dbt_utils.recency`                       | Viimane `date_key` peab olema piisavalt värske (25 päeva)                                                              |
+| `dbt_utils.expression_is_true`            | Avaldis peab kehtima nt `cost >= 0`                                                                                    |
+| `dbt_expectations`                        | Võrdleb **kahte veergu** samal real — nt `opportunity_at` ≥ `lead_created_at`: `dim_lead`: kuupäevad õiges järjekorras |
+| `dbt_utils.not_null_pDroportion`          | Võib tühi olla, kui nt 65–90% veerust on täidetud                                |
+| `dbt_utils.unique_combination_of_columns` | Mitu veergu koos unikaalsed                                      
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 The goal of the [data engineering course](https://github.com/KristoR/ut-andmeinseneeria-2026) group project was to build a complete data solution that integrates marketing investments, web analytics, CRM leads and orders, and self-service contract data. This makes it possible to assess the return on marketing investment more precisely.
 
