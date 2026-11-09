@@ -3,7 +3,7 @@
 [Andmeinseneeria kursuse](https://github.com/KristoR/ut-andmeinseneeria-2026) grupitöö eesmärgiks oli luua terviklik andmelahendus, mis integreerib turundusinvesteeringud, veebianalüütika, CRM-i müügivihjed ja tellimused ning iseteeninduse lepingute andmed. Nii saab täpsemalt hinnata turundusinvesteeringute tasuvust.
 
 Minu ülesandeks oli dbt-s testide kirjutamine. 
--[_marts_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_marts_models.yml) ja [_stg_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_stg_models.yml) sisaldavad katkendeid üld(generic)testidest ehk päringutest, mis kontrollivad ühe tabeli/mudeli veerge.
+-[_marts_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_marts_models.yml) ja [_stg_models.yml](https://github.com/AnuVi/dbt-tests/blob/main/_stg_models.yml) sisaldavad katkendeid üldtestidest (generic tests) ehk päringud, mis kontrollivad ühe tabeli/mudeli ühte veergu.
 - Kirjutatud singular-testid leiab [kaustast](https://github.com/AnuVi/dbt-tests/tree/main/dbt/tests). Need testid sisaldavad ühte päringut, mis kontrollib andmeid üle mitme tabeli.
 - [Dokumentatsioon testide kohta](https://github.com/AnuVi/dbt-tests/blob/main/testid.md). 
 - [Jupp lõputöö videost](https://www.anuvi.me/demos/videos/dbt-test.mp4), kus tutvustan nõutud kolme andmekvaliteedi testi.
